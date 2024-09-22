@@ -1,0 +1,9 @@
+-- Пусть product - таблица с информацией по продуктам, category - таблица категорий, product_category - таблица связывающая продукты и категории. 
+-- Тогда SQL запрос для выбора всех пар «Имя продукта – Имя категории» будет следующим:
+
+SELECT
+  product.name,
+  category.name
+FROM product 
+LEFT JOIN product_category ON product.id = product_category.product_id
+LEFT JOIN category ON category.id = product_category.category_id
